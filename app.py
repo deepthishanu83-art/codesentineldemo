@@ -11,7 +11,7 @@ def get_user():
     user_id = request.args["id"]
 
     # INTENTIONAL SQL INJECTION DEMO
-    query = "SELECT * FROM users WHERE id=" + user_id
+    query = "SELECT * FROM users WHERE id=%s"
 
     return execute_query(query)
 
